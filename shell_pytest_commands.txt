@@ -1,0 +1,93 @@
+Shell pytest commands
+
+
+ wo  5 dec - 14:09  ~/git/pytest_test   master 8☀ 
+ @michel  pytest
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.0, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/michel/git/pytest_test, inifile:
+collected 6 items                                                                                                                                          
+
+test_pytest.py ......                                                                                                                                [100%]
+
+================================================================= 6 passed in 0.02 seconds =================================================================
+
+ wo  5 dec - 14:10  ~/git/pytest_test   master 8☀ 
+ @michel  pytest test_pytest.py 
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.0, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/michel/git/pytest_test, inifile:
+collected 6 items                                                                                                                                          
+
+test_pytest.py ......                                                                                                                                [100%]
+
+================================================================= 6 passed in 0.01 seconds =================================================================
+
+ wo  5 dec - 14:10  ~/git/pytest_test   master 8☀ 
+ @michel  #or pass directoryname
+
+ ✘  wo  5 dec - 14:11  ~/git/pytest_test   master 8☀ 
+ @michel  pytest -k float  
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.0, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/michel/git/pytest_test, inifile:
+collected 6 items / 5 deselected                                                                                                                           
+
+test_pytest.py .                                                                                                                                     [100%]
+
+========================================================== 1 passed, 5 deselected in 0.01 seconds ==========================================================
+
+ wo  5 dec - 14:11  ~/git/pytest_test   master 8☀ 
+ @michel  pytest -k TestSomeTests
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.0, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/michel/git/pytest_test, inifile:
+collected 6 items / 4 deselected                                                                                                                           
+
+test_pytest.py ..                                                                                                                                    [100%]
+
+========================================================== 2 passed, 4 deselected in 0.02 seconds ==========================================================
+
+ ✘  wo  5 dec - 14:15  ~/git/pytest_test   master 8☀ 
+ @michel  pytest -m michel
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.0, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/michel/git/pytest_test, inifile:
+collected 7 items / 6 deselected                                                                                                                           
+
+test_pytest.py .                                                                                                                                     [100%]
+
+========================================================== 1 passed, 6 deselected in 0.07 seconds ==========================================================
+
+ wo  5 dec - 14:15  ~/git/pytest_test   master 8☀ 
+ @michel  pytest -m michel -v
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.0, pytest-3.8.0, py-1.6.0, pluggy-0.7.1 -- /home/michel/miniconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /home/michel/git/pytest_test, inifile:
+collected 7 items / 6 deselected                                                                                                                           
+
+test_pytest.py::test_marked_test PASSED                                                                                                              [100%]
+
+========================================================== 1 passed, 6 deselected in 0.01 seconds ==========================================================
+
+ wo  5 dec - 14:16  ~/git/pytest_test   master 8☀ 
+ @michel  pytest -m michel -q
+.                                                                                                                                                    [100%]
+1 passed, 6 deselected in 0.01 seconds
+
+ wo  5 dec - 14:16  ~/git/pytest_test   master 8☀ 
+
+ ✘  wo  5 dec - 14:17  ~/git/pytest_test   master 8☀ 
+ @michel  pytest -m michel --maxfail 1
+=================================================================== test session starts ====================================================================
+platform linux -- Python 3.7.0, pytest-3.8.0, py-1.6.0, pluggy-0.7.1
+rootdir: /home/michel/git/pytest_test, inifile:
+collected 7 items / 6 deselected                                                                                                                           
+
+test_pytest.py .                                                                                                                                     [100%]
+
+========================================================== 1 passed, 6 deselected in 0.01 seconds ==========================================================
+
+ wo  5 dec - 14:17  ~/git/pytest_test   master 8☀ 
+ @michel  

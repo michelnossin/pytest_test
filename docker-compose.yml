@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  michel:
+    image: michel:latest
+    working_dir: /
+    volumes:
+    - type: bind
+      source: ./
+      target: /root
+    tty: true

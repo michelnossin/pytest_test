@@ -1,0 +1,7 @@
+FROM busybox:1.29.3
+
+SHELL ["/bin/sh" , "-c"]
+
+RUN echo hello michel
+
+COPY python3_venv_howto.txt /

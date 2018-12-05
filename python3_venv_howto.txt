@@ -1,0 +1,53 @@
+How to create virtual env in python 3
+
+
+za  1 dec - 15:48  ~/git/pytest_test   master 2☀ 
+ @michel  python -m venv pytest_venv
+
+ za  1 dec - 15:50  ~/git/pytest_test   master 3☀ 
+ @michel  source ./pytest_venv/bin/activate
+(pytest_venv) 
+ za  1 dec - 15:50  ~/git/pytest_test   master 3☀ 
+ @michel  pip install pytest
+Collecting pytest
+  Downloading https://files.pythonhosted.org/packages/81/27/d4302e4e00497448081120f65029696070806bc8e649b83f644de006d710/pytest-4.0.1-py2.py3-none-any.whl (
+217kB)                                                                                                                                                     
+    100% |████████████████████████████████| 225kB 3.8MB/s 
+Collecting more-itertools>=4.0.0 (from pytest)
+  Using cached https://files.pythonhosted.org/packages/79/b1/eace304ef66bd7d3d8b2f78cc374b73ca03bc53664d78151e9df3b3996cc/more_itertools-4.3.0-py3-none-any.
+whl                                                                                                                                                        
+Collecting atomicwrites>=1.0 (from pytest)
+  Using cached https://files.pythonhosted.org/packages/3a/9a/9d878f8d885706e2530402de6417141129a943802c084238914fa6798d97/atomicwrites-1.2.1-py2.py3-none-an
+y.whl                                                                                                                                                      
+Collecting six>=1.10.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+Collecting pluggy>=0.7 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/1c/e7/017c262070af41fe251401cb0d0e1b7c38f656da634cd0c15604f1f30864/pluggy-0.8.0-py2.py3-none-any.whl
+Collecting py>=1.5.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/3e/c7/3da685ef117d42ac8d71af525208759742dd235f8094221fdaafcd3dba8f/py-1.7.0-py2.py3-none-any.whl (83kB
+)                                                                                                                                                          
+    100% |████████████████████████████████| 92kB 3.8MB/s 
+Requirement already satisfied: setuptools in ./pytest_venv/lib/python3.7/site-packages (from pytest) (39.0.1)
+Collecting attrs>=17.4.0 (from pytest)
+  Using cached https://files.pythonhosted.org/packages/3a/e1/5f9023cc983f1a628a8c2fd051ad19e76ff7b142a0faf329336f9a62a514/attrs-18.2.0-py2.py3-none-any.whl
+Installing collected packages: six, more-itertools, atomicwrites, pluggy, py, attrs, pytest
+Successfully installed atomicwrites-1.2.1 attrs-18.2.0 more-itertools-4.3.0 pluggy-0.8.0 py-1.7.0 pytest-4.0.1 six-1.11.0
+You are using pip version 10.0.1, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+(pytest_venv) 
+ za  1 dec - 15:51  ~/git/pytest_test   master 3☀ 
+ @michel  pytest --version
+This is pytest version 4.0.1, imported from /home/michel/git/pytest_test/pytest_venv/lib/python3.7/site-packages/pytest.py
+(pytest_venv) 
+ za  1 dec - 15:51  ~/git/pytest_test   master 3☀ 
+ @michel  deactivate
+
+ za  1 dec - 15:51  ~/git/pytest_test   master 3☀ 
+ @michel  pytest --version
+This is pytest version 3.8.0, imported from /home/michel/miniconda3/lib/python3.7/site-packages/pytest.py
+
+ za  1 dec - 15:51  ~/git/pytest_test   master 3☀ 
+ @michel  rm -rf pytest_venv 
+
+ za  1 dec - 15:51  ~/git/pytest_test   master 2☀ 
+ @michel                    
