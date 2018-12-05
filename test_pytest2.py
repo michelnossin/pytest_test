@@ -1,4 +1,5 @@
 import pytest
+from pytest import raises
 
 
 @pytest.fixture(scope="session", autouse=True, params=[1, 2])
@@ -37,6 +38,7 @@ def run_before_and_complex_after(request):
 
 def sum_it(a, b):
     return a + b
+
 
 def test_sum(run_before_and_after):
     assert sum_it(1, 2) == 3
