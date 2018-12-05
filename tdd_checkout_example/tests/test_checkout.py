@@ -2,6 +2,7 @@ from tdd_checkout_example import checkout as ch
 import pytest
 from pytest import raises
 
+
 @pytest.fixture(scope="session")
 def checkout_cart():
     return ch.Checkout()
@@ -26,3 +27,20 @@ def test_throw_exception_missing_price(checkout_cart):
 
     with raises(ValueError):
         checkout_cart.add_item_price(item)
+
+
+def test_can_add_discount_rule(checkout_cart):
+    correct_discount_rule = ({"name": "man", "minimum_quantity": 10,
+                      "discount_percent": 20})
+    checkout_cart.add_discount_rule(correct_discount_rule)
+    assert len(checkout_cart._discount_rules_list) == 1
+
+    bad_discount_rules = [({"name": "unknown", "minimum_quantity": 10,
+                            "discount_percent": 20}),
+                          ({"name": "man",
+                            "discount_percent": 20}),
+                          ({"name": "man", "minimum_quantity": 10,
+                            "discount_percent": 110})]
+    for rule in bad_discount_rules:
+        with raises(ValueError):
+            checkout_cart.add_discount_rule(rule)
