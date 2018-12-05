@@ -9,16 +9,24 @@ def checkout_cart():
 
 
 def test_can_add_item_price(checkout_cart):
-    item = {"name": "car", "price": 11200, "quantity": 3}
-    checkout_cart.add_item_price(item)
+    one_correct_item = {"name": "car", "price": 11200, "quantity": 3}
+    checkout_cart.add_item_price(one_correct_item)
     assert len(checkout_cart._item_list) == 1
 
-    item = {"name": "man", "price": 16200, "quantity": 8}
-    checkout_cart.add_item_price(item)
-    item = {"name": "man", "price": 16200, "quantity": 11}
-    checkout_cart.add_item_price(item)
+    correct_items = [{"name": "man", "price": 16200, "quantity": 8},
+                     {"name": "man", "price": 16200, "quantity": 11}]
+
+    for item in correct_items:
+        checkout_cart.add_item_price(item)
 
     assert len(checkout_cart._item_list) == 3
+
+    bad_items = [{"name": "man", "quantity": 11},
+                 {"name": "man", "price": 400}]
+
+    for item in bad_items:
+        with raises(ValueError):
+            checkout_cart.add_item_price(item)
 
 
 def test_throw_exception_missing_price(checkout_cart):

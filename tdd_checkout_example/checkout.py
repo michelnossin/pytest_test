@@ -5,7 +5,7 @@ class Checkout:
 
     def add_item_price(self, item):
         try:
-            if item["price"] and item["quantity"]:
+            if item["price"] and item["quantity"] and item["price"]:
                 self._item_list.append(dict(item))
         except KeyError:
             raise ValueError
