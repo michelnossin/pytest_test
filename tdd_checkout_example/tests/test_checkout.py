@@ -9,17 +9,16 @@ def checkout_cart():
 
 
 def test_can_add_item_price(checkout_cart):
-    item = {"name": "car", "price": 11200}
+    item = {"name": "car", "price": 11200, "quantity": 3}
     checkout_cart.add_item_price(item)
     assert len(checkout_cart._item_list) == 1
 
-    item = {"name": "man", "price": 16200}
+    item = {"name": "man", "price": 16200, "quantity": 8}
     checkout_cart.add_item_price(item)
-    assert len(checkout_cart._item_list) == 2
+    item = {"name": "man", "price": 16200, "quantity": 11}
+    checkout_cart.add_item_price(item)
 
-
-def test_can_calculate_total_price(checkout_cart):
-    assert checkout_cart.calculate_total_price() == 27400
+    assert len(checkout_cart._item_list) == 3
 
 
 def test_throw_exception_missing_price(checkout_cart):
@@ -31,7 +30,7 @@ def test_throw_exception_missing_price(checkout_cart):
 
 def test_can_add_discount_rule(checkout_cart):
     correct_discount_rule = ({"name": "man", "minimum_quantity": 10,
-                      "discount_percent": 20})
+                              "discount_percent": 20})
     checkout_cart.add_discount_rule(correct_discount_rule)
     assert len(checkout_cart._discount_rules_list) == 1
 
@@ -44,3 +43,8 @@ def test_can_add_discount_rule(checkout_cart):
     for rule in bad_discount_rules:
         with raises(ValueError):
             checkout_cart.add_discount_rule(rule)
+
+
+def test_can_calculate_total_price(checkout_cart):
+    assert checkout_cart.calculate_total_price(discount=False) == 341400
+    assert checkout_cart.calculate_total_price(discount=True) == 305760
