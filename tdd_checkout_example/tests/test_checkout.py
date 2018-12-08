@@ -1,11 +1,11 @@
-from tdd_checkout_example import checkout as ch
+from tdd_checkout_example.checkout import Checkout
 import pytest
 from pytest import raises
 
 
 @pytest.fixture(scope="session")
 def checkout_cart():
-    return ch.Checkout()
+    return Checkout()
 
 
 def test_can_add_item_price(checkout_cart):

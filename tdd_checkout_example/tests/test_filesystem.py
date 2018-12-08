@@ -1,4 +1,4 @@
-from tdd_checkout_example import filesystem as fs
+from tdd_checkout_example.filesystem import FilesystemHandler
 import pytest
 from pytest import raises
 from unittest.mock import MagicMock
@@ -6,7 +6,7 @@ from unittest.mock import MagicMock
 
 @pytest.fixture(scope="session")
 def fs_handler():
-    return fs.FilesystemHandler()
+    return FilesystemHandler()
 
 
 @pytest.fixture()
