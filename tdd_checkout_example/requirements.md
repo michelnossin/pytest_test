@@ -10,3 +10,8 @@
 First add tests which fails
 test_can_create_checkout_instance
 calling Checkout() which does not exist
+
+Later on we have some new requirements for IO (Mock)
+- Can call readfrom file
+- readfromfile gets a correct string
+- readfromfile throws exception if file does not exist
