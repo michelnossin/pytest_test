@@ -2,10 +2,6 @@ from tdd_checkout_example.network import Network
 from unittest.mock import MagicMock
 
 
-def test_can_call_geturl():
-    Network().get_url("http://www.nossin.com")
-
-
 def test_call_and_return_good_result(monkeypatch):
     mock_result = MagicMock()
     mock_result.text = "Favourite_Data_Engineer"
